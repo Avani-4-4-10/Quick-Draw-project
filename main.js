@@ -1,8 +1,10 @@
-array_1 = ["pen, paper, book, bottle"]
+array_1 = ["moon", "paper","star" , "clock"]
 
-random_no = Math.floor((Math.random() * array_1.length) + 1)
+random_no = Math.floor((Math.random() * array_1.length))
+
 
 sketch = array_1[random_no]
+document.getElementById("sketch_drawn").innerHTML="Sketch To Be Drawn: "+sketch
 timer_counter = 0
 timer_check = ""
 drawn_sketch = ""
@@ -60,10 +62,9 @@ function check_sketch(){
     document.getElementById("time").innerHTML="Time: "+timer_counter
     if(timer_counter > 400){
         timer_counter=0
-    }
-    if(timer_counter==400){
         timer_check="completed"
     }
+   
     if(timer_check=="completed"|| answer_holder=="set"){
         timer_check=""
        answer_holder=""
@@ -72,7 +73,7 @@ function check_sketch(){
 }
 function UpdateCanvas(){
     background("white")
-    random_no = Math.floor((Math.random() * array_1.length) + 1)
+    random_no = Math.floor((Math.random() * array_1.length))
     sketch = array_1[random_no]
     document.getElementById("sketch_drawn").innerHTML="Sketch To Be Drawn: "+sketch
 }
